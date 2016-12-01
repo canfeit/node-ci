@@ -13,8 +13,8 @@ RUN apk add --no-cache --virtual .build-deps pcre libgcc libstdc++ libuv \
     && npm cache clean  \
     && rm -rf /tmp/*
 
-ADD http://mirrors.jenkins-ci.org/war/latest/jenkins.war
-RUN chmod 644 jenkins.war && ls && java -jar jenkins.war
+ADD http://mirrors.jenkins-ci.org/war/latest/jenkins.war /
+RUN chmod 644 jenkins.war && ls && java -jar /jenkins.war
 
-CMD ["java", "-jar", "jenkins.war"]
+CMD ["java", "-jar", "/jenkins.war"]
 EXPOSE 8080
