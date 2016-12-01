@@ -12,4 +12,5 @@ RUN apk add --no-cache --virtual .build-deps pcre libgcc libstdc++ libuv \
     && apk del .build-deps \
     && npm cache clean  \
     && rm -rf /tmp/*  \
-    && java version
+    && java  \
+    && javac
