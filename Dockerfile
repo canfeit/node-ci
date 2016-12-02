@@ -44,7 +44,7 @@ RUN apk add --no-cache --virtual .build-deps \
  ttf-dejavu \
     && apk add --no-cache nodejs \
     #&& npm i -g pm2 \
-    && apk del .build-deps \
+    #&& apk del .build-deps \
     #&& npm cache clean  \
     && ls /tmp -a \
     && rm -rf /tmp/* \
