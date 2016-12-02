@@ -6,7 +6,7 @@ MAINTAINER wangjh <wangjh@bcc.ac.cn>
 ADD http://mirrors.jenkins-ci.org/war/latest/jenkins.war /
 
 RUN apk add --no-cache --virtual .build-deps \
-&& ca-certificates \
+#&& ca-certificates \
 && libssh2 \
 && libcurl \
 && expat \
