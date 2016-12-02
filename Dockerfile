@@ -42,12 +42,12 @@ RUN apk add --no-cache --virtual .build-deps \
  mkfontscale \
  mkfontdir \
  ttf-dejavu \
-    && apk add --no-cache nodejs \
+    && apk add --no-cache nodejs openjdk8-jre \
     #&& npm i -g pm2 \
     #&& apk del .build-deps \
     #&& npm cache clean  \
     && ls /tmp -a \
     && rm -rf /tmp/* \
-    && java
+    && javac -version
 
 CMD ["java", "-jar", "/jenkins.war"]
