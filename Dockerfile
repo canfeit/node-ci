@@ -31,7 +31,7 @@ RUN apk add --no-cache --virtual .build-deps \
  libpng \
  freetype \
  giflib \
- openjdk8-jre-lib \
+ #openjdk8-jre-lib \
  java-common \
  alsa-lib \
  #openjdk8-jre-base \
