@@ -5,42 +5,8 @@ MAINTAINER wangjh <wangjh@bcc.ac.cn>
 #ENV PATH $PATH:$JAVA_HOME/bin
 ADD http://mirrors.jenkins-ci.org/war/latest/jenkins.war /
 
-RUN apk add --no-cache --virtual .build-deps \
- ca-certificates \
- libssh2 \
- libcurl \
- expat \
- pcre \
- git \
- libgcc \
- libstdc++ \
- libuv \
- libffi \
- libtasn1 \
- p11-kit \
- p11-kit-trust \
- java-cacerts \
- libxau \
- libxdmcp \
- libxcb \
- libx11 \
- libxext \
- libxi \
- libxrender \
- libxtst \
- libpng \
- freetype \
- giflib \
- alsa-lib \
- fontconfig \
- encodings \
- libfontenc \
- mkfontscale \
- mkfontdir \
- ttf-dejavu java-common openjdk8-jre-lib openjdk8-jre-base\
-    && apk add --no-cache openjdk8-jre nodejs git\
+RUN apk add --no-cache openjdk8-jre nodejs git\
     #&& npm i -g pm2 \
-    && apk del .build-deps \
     #&& npm cache clean  \
     && ls /tmp -a \
     && rm -rf /tmp/* \
