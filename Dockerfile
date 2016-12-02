@@ -48,6 +48,6 @@ RUN apk add --no-cache --virtual .build-deps \
     #&& npm cache clean  \
     && ls /tmp -a \
     && rm -rf /tmp/* \
-    && javac -version
+    && java -version
 
 CMD ["java", "-jar", "/jenkins.war"]
