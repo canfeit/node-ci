@@ -34,7 +34,7 @@ RUN apk add --no-cache --virtual .build-deps \
  openjdk8-jre-lib \
  java-common \
  alsa-lib \
- openjdk8-jre-base \
+ #openjdk8-jre-base \
 # openjdk8-jre \
  fontconfig \
  encodings \
