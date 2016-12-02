@@ -31,20 +31,19 @@ RUN apk add --no-cache --virtual .build-deps \
  libpng \
  freetype \
  giflib \
- #openjdk8-jre-lib \
+ openjdk8-jre-lib \
  java-common \
  alsa-lib \
- #openjdk8-jre-base \
-# openjdk8-jre \
+ openjdk8-jre-base \
  fontconfig \
  encodings \
  libfontenc \
  mkfontscale \
  mkfontdir \
  ttf-dejavu \
-    && apk add --no-cache nodejs openjdk8-jre \
+    && apk add --no-cache nodejs \
     #&& npm i -g pm2 \
-    && apk del .build-deps \
+    #&& apk del .build-deps \
     #&& npm cache clean  \
     && ls /tmp -a \
     && rm -rf /tmp/* \
