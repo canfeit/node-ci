@@ -5,11 +5,49 @@ MAINTAINER wangjh <wangjh@bcc.ac.cn>
 #ENV PATH $PATH:$JAVA_HOME/bin
 ADD http://mirrors.jenkins-ci.org/war/latest/jenkins.war /
 
-RUN apk add --no-cache nodejs git ttf-dejavu openjdk8-jre \
+RUN apk add --no-cache --virtual .build-deps \
+&& ca-certificates \
+&& libssh2 \
+&& libcurl \
+&& expat \
+&& pcre \
+&& git \
+&& libgcc \
+&& libstdc++ \
+&& libuv \
+&& libffi \
+&& libtasn1 \
+&& p11-kit \
+&& p11-kit-trust \
+&& java-cacerts \
+&& libxau \
+&& libxdmcp \
+&& libxcb \
+&& libx11 \
+&& libxext \
+&& libxi \
+&& libxrender \
+&& libxtst \
+&& libpng \
+&& freetype \
+&& giflib \
+&& openjdk8-jre-lib \
+&& java-common \
+&& alsa-lib \
+&& openjdk8-jre-base \
+#&& openjdk8-jre \
+&& fontconfig \
+&& encodings \
+&& libfontenc \
+&& mkfontscale \
+&& mkfontdir \
+&& ttf-dejavu \
+    && apk add --no-cache nodejs \
     #&& npm i -g pm2 \
-    #&& apk del .build-deps \
+    && apk del .build-deps \
     #&& npm cache clean  \
     && ls /tmp -a \
-    && rm -rf /tmp/*
+    && rm -rf /tmp/* \
+    && java
 
 CMD ["java", "-jar", "/jenkins.war"]
