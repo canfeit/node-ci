@@ -37,8 +37,8 @@ RUN apk add --no-cache --virtual .build-deps \
  libfontenc \
  mkfontscale \
  mkfontdir \
- ttf-dejavu \
-    && apk add --no-cache java-common \
+ ttf-dejavu java-common\
+    && apk add --no-cache openjdk8-jre-lib openjdk8-jre-base \
     #&& npm i -g pm2 \
     && apk del .build-deps \
     #&& npm cache clean  \
