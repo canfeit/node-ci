@@ -29,7 +29,7 @@ sudo docker logs jenkins #查看日志找出密码
     cp -R target/portal /
     mv -f node_modules /portal
     cd /portal
-    node_modules/.bin/pm2 kill
+    /portal/node_modules/.bin/pm2 kill
     node_modules/.bin/pm2 start pm2.json
     ```
 
