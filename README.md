@@ -25,13 +25,14 @@ sudo docker logs jenkins #查看日志找出密码
  构建后操作 post build task Script
     ```bash
     export NODE_ENV=production
+    /portal/node_modules/.bin/pm2 kill
     rm -rf /portal
     cp -R target/portal /
     mv -f node_modules /portal
     cd /portal
-    /portal/node_modules/.bin/pm2 kill
     node_modules/.bin/pm2 start pm2.json
     ```
+浏览器访问: [http://localhost:81](http://localhost:81)
 
 ## 管理
  jenkins 重启:http://test.kedo.so:8080/safeRestart
