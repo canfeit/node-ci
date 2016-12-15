@@ -30,7 +30,7 @@ sudo docker logs jenkins #查看日志找出密码
     cp -R target/portal /
     mv -f node_modules /portal
     cd /portal
-    node_modules/.bin/pm2 start pm2.json
+    npm start
     ```
 浏览器访问: [http://localhost:81](http://localhost:81)
 
