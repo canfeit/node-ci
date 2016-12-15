@@ -18,20 +18,19 @@ sudo docker logs jenkins #查看日志找出密码
 
  构建 Execute shell
     ```bash
-    export NODE_ENV='production'
+    export NODE_ENV=production
     npm i
     npm test
     ```
  构建后操作 post build task Script
     ```bash
-    export NODE_ENV='production'
+    export NODE_ENV=production
     rm -rf /portal
     cp -R target/portal /
     mv -f node_modules /portal
     cd /portal
-    pm2 kill || npm i -g pm2
-    rm -rf /root/.pm2/logs/*
-    pm2 start pm2.json
+    node_modules/.bin/pm2 kill
+    node_modules/.bin/pm2 start pm2.json
     ```
 
 ## 管理
