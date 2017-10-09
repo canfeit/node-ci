@@ -1,4 +1,4 @@
-# node 7.2.0 jenkins 2.36 持续集成，基于alpine:edge
+# node 8.6.0 jenkins 2.83 持续集成，基于alpine:edge
 ## 启动容器
 ```bash
 sudo docker run -d -p 8080:8080 -p 81:91 --name jenkins canfeit/node-ci
