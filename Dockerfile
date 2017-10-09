@@ -1,3 +1,3 @@
 FROM alpine:edge
-MAINTAINER wangjh <jianhui.wang@hpe.com>
+MAINTAINER wangjh <wangjianhui@herebookstore.com>
 RUN apk add --no-cache nodejs-current
